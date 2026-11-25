@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pâtisserie la Gerbe d'Or — Pâtisserie · Croissanterie · Salon de thé</title>
+<meta name="description" content="Pâtisserie la Gerbe d'Or, rue de France à Béja (Tunisie), plus code P5FP+C7 : pâtisseries maison, croissants pur beurre et salon de thé. Le goût de l'authentique à prix abordables.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --gold:#c8952b;
+    --gold-deep:#a97a1c;
+    --gold-soft:#e8c877;
+    --cream:#fbf6ec;
+    --cream-2:#f4ead6;
+    --brown:#3a2a1c;
+    --brown-soft:#5c4632;
+    --wine:#7c2d2d;
+    --ink:#2a1f16;
+    --line:rgba(58,42,28,.14);
+    --shadow:0 18px 50px -22px rgba(58,42,28,.45);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Jost',system-ui,sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.12;color:var(--brown)}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .wrap{width:min(1180px,92vw);margin:0 auto}
+  .eyebrow{
+    font-family:'Jost',sans-serif;font-size:.72rem;letter-spacing:.32em;
+    text-transform:uppercase;color:var(--gold-deep);font-weight:500;
+  }
+  .btn{
+    display:inline-block;padding:.85rem 1.9rem;border-radius:2px;
+    font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;
+    transition:.25s ease;border:1px solid transparent;cursor:pointer;
+  }
+  .btn-gold{background:var(--gold);color:#fff}
+  .btn-gold:hover{background:var(--gold-deep);transform:translateY(-2px)}
+  .btn-ghost{border-color:var(--brown);color:var(--brown)}
+  .btn-ghost:hover{background:var(--brown);color:var(--cream)}
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(251,246,236,.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:.9rem 0;gap:1rem}
+  .brand{display:flex;align-items:center;gap:.7rem}
+  .brand .mark{
+    width:42px;height:42px;border-radius:50%;
+    background:radial-gradient(circle at 35% 30%,var(--gold-soft),var(--gold-deep));
+    display:grid;place-items:center;color:#fff;font-family:'Cormorant Garamond',serif;
+    font-size:1.35rem;font-weight:700;box-shadow:0 6px 16px -6px rgba(169,122,28,.8);
+  }
+  .brand .name{font-family:'Cormorant Garamond',serif;font-size:1.28rem;font-weight:700;color:var(--brown);line-height:1}
+  .brand .sub{font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-deep)}
+  .nav-links{display:flex;gap:1.9rem;align-items:center}
+  .nav-links a{font-size:.82rem;letter-spacing:.06em;color:var(--brown-soft);position:relative;padding:.2rem 0}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;height:1px;width:0;background:var(--gold);transition:.3s}
+  .nav-links a:hover{color:var(--brown)}
+  .nav-links a:hover::after{width:100%}
+  .nav-cta{display:flex;align-items:center;gap:1rem}
+  .burger{display:none;background:none;border:1px solid var(--line);border-radius:2px;padding:.5rem .7rem;cursor:pointer}
+  .burger span{display:block;width:20px;height:2px;background:var(--brown);margin:4px 0}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;min-height:88vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;background:url('images/hero.jpg') center/cover no-repeat;transform:scale(1.04)}
+  .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(42,31,22,.9) 0%,rgba(42,31,22,.72) 42%,rgba(42,31,22,.28) 100%)}
+  .hero-inner{position:relative;z-index:2;padding:6rem 0;max-width:660px}
+  .hero .eyebrow{color:var(--gold-soft)}
+  .hero h1{font-size:clamp(2.6rem,6vw,4.6rem);color:#fff;margin:1rem 0 1.2rem;font-weight:600}
+  .hero h1 em{font-style:italic;color:var(--gold-soft)}
+  .hero p{color:rgba(255,255,255,.86);font-size:1.08rem;max-width:520px;font-weight:300}
+  .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2.2rem}
+  .hero .btn-ghost{border-color:rgba(255,255,255,.6);color:#fff}
+  .hero .btn-ghost:hover{background:#fff;color:var(--brown)}
+  .hero-badges{display:flex;gap:2.4rem;margin-top:3rem;flex-wrap:wrap}
+  .hero-badges div{border-left:2px solid var(--gold);padding-left:.9rem}
+  .hero-badges strong{display:block;font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:#fff}
+  .hero-badges span{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+
+  /* ---------- SECTION BASE ---------- */
+  section{padding:6rem 0}
+  .sec-head{max-width:640px;margin-bottom:3.2rem}
+  .sec-head h2{font-size:clamp(2rem,4vw,3rem);margin:.7rem 0 1rem}
+  .sec-head p{color:var(--brown-soft);font-weight:300}
+  .center{margin-left:auto;margin-right:auto;text-align:center}
+
+  /* ---------- MAISON ---------- */
+  .maison{background:var(--cream)}
+  .maison-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:4rem;align-items:center}
+  .maison-img{position:relative}
+  .maison-img img{border-radius:3px;box-shadow:var(--shadow);width:100%;height:520px;object-fit:cover}
+  .maison-img .stamp{
+    position:absolute;bottom:-26px;left:-26px;width:130px;height:130px;border-radius:50%;
+    background:var(--wine);color:var(--cream);display:grid;place-items:center;text-align:center;
+    font-family:'Cormorant Garamond',serif;font-size:1.05rem;line-height:1.15;padding:1rem;
+    box-shadow:0 14px 30px -12px rgba(124,45,45,.7);border:3px solid var(--cream);
+  }
+  .maison-text p{margin-bottom:1.1rem;color:var(--brown-soft);font-weight:300}
+  .maison-text p.lead{font-size:1.12rem;color:var(--brown)}
+  .values{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin-top:2rem}
+  .value{border-top:1px solid var(--line);padding-top:1rem}
+  .value h4{font-size:1.15rem;margin-bottom:.3rem}
+  .value p{font-size:.9rem;margin:0}
+
+  /* ---------- PRODUITS ---------- */
+  .produits{background:var(--cream-2)}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+  .card{
+    background:var(--cream);border:1px solid var(--line);border-radius:3px;overflow:hidden;
+    display:flex;flex-direction:column;transition:.3s ease;
+  }
+  .card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--gold-soft)}
+  .card-img{height:230px;overflow:hidden}
+  .card-img img{width:100%;height:100%;object-fit:cover;transition:.6s ease}
+  .card:hover .card-img img{transform:scale(1.06)}
+  .card-body{padding:1.8rem;flex:1;display:flex;flex-direction:column}
+  .card-body .tag{font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep);font-weight:500}
+  .card-body h3{font-size:1.6rem;margin:.5rem 0 .8rem}
+  .card-body p{color:var(--brown-soft);font-weight:300;font-size:.95rem;flex:1}
+  .card-body ul{list-style:none;margin-top:1.1rem;display:flex;flex-wrap:wrap;gap:.5rem}
+  .card-body li{font-size:.76rem;background:var(--cream-2);border:1px solid var(--line);padding:.28rem .7rem;border-radius:20px;color:var(--brown-soft)}
+
+  /* ---------- PRIX ---------- */
+  .prix{background:var(--brown);color:var(--cream)}
+  .prix .eyebrow{color:var(--gold-soft)}
+  .prix h2{color:#fff}
+  .prix .sec-head p{color:rgba(251,246,236,.72)}
+  .price-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:2.4rem}
+  .price-col{background:rgba(251,246,236,.05);border:1px solid rgba(232,200,119,.22);border-radius:3px;padding:2rem}
+  .price-col h3{color:var(--gold-soft);font-size:1.5rem;margin-bottom:1.2rem;padding-bottom:.8rem;border-bottom:1px solid rgba(232,200,119,.25)}
+  .price-row{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:.62rem 0;border-bottom:1px dashed rgba(251,246,236,.14)}
+  .price-row:last-child{border-bottom:none}
+  .price-row span{font-weight:300;font-size:.95rem;color:rgba(251,246,236,.9)}
+  .price-row b{font-family:'Cormorant Garamond',serif;font-size:1.25rem;color:var(--gold-soft);white-space:nowrap}
+  .price-note{margin-top:2.6rem;text-align:center;font-size:.9rem;color:rgba(251,246,236,.7);font-weight:300}
+  .price-note strong{color:var(--gold-soft);font-weight:500}
+
+  /* ---------- SALON ---------- */
+  .salon{background:var(--cream)}
+  .salon-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:4rem;align-items:center}
+  .salon-img img{border-radius:3px;box-shadow:var(--shadow);width:100%;height:500px;object-fit:cover}
+  .salon-text p{color:var(--brown-soft);font-weight:300;margin-bottom:1.1rem}
+  .salon-list{list-style:none;margin-top:1.6rem;display:grid;gap:.9rem}
+  .salon-list li{display:flex;gap:.9rem;align-items:flex-start;font-size:.96rem;color:var(--brown-soft)}
+  .salon-list li::before{content:"✦";color:var(--gold);font-size:1rem;line-height:1.5}
+
+  /* ---------- ADRESSE ---------- */
+  .adresse{background:var(--cream-2)}
+  .adresse-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:stretch}
+  .info-card{background:var(--cream);border:1px solid var(--line);border-radius:3px;padding:2.6rem;box-shadow:var(--shadow)}
+  .info-card h3{font-size:1.7rem;margin-bottom:1.4rem}
+  .info-line{display:flex;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--line)}
+  .info-line:last-of-type{border-bottom:none}
+  .info-line .ic{width:38px;height:38px;flex:none;border-radius:50%;background:var(--cream-2);display:grid;place-items:center;color:var(--gold-deep);font-size:1.05rem}
+  .info-line .lbl{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);font-weight:500}
+  .info-line .val{color:var(--brown);font-size:1rem}
+  .map-frame{border-radius:3px;overflow:hidden;border:1px solid var(--line);min-height:420px;box-shadow:var(--shadow);background:var(--cream);position:relative}
+  .map-frame a{display:block;height:100%;min-height:420px}
+  .map-frame img{width:100%;height:100%;min-height:420px;object-fit:cover;display:block;transition:.5s ease}
+  .map-frame:hover img{transform:scale(1.03)}
+  .map-frame::after{
+    content:"Ouvrir dans la carte ↗";position:absolute;bottom:14px;right:14px;
+    background:rgba(58,42,28,.86);color:var(--cream);font-size:.72rem;letter-spacing:.1em;
+    text-transform:uppercase;padding:.5rem .9rem;border-radius:2px;pointer-events:none;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--brown);color:rgba(251,246,236,.75);padding:3.5rem 0 2rem}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2.5rem;padding-bottom:2.4rem;border-bottom:1px solid rgba(251,246,236,.14)}
+  .foot-brand .name{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:#fff;font-weight:700}
+  .foot-brand p{font-weight:300;font-size:.92rem;margin-top:.8rem;max-width:320px}
+  footer h4{color:var(--gold-soft);font-size:1.05rem;margin-bottom:1rem;font-family:'Jost',sans-serif;letter-spacing:.1em;text-transform:uppercase;font-weight:500}
+  footer ul{list-style:none;display:grid;gap:.6rem;font-size:.92rem;font-weight:300}
+  footer a:hover{color:var(--gold-soft)}
+  .foot-bottom{padding-top:1.6rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.8rem;font-weight:300}
+
+  /* ---------- REVEAL ---------- */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:960px){
+    .nav-links{display:none}
+    .burger{display:block}
+    .nav-links.open{
+      display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;
+      background:var(--cream);padding:1.4rem 4vw;gap:1.1rem;border-bottom:1px solid var(--line);
+    }
+    .maison-grid,.salon-grid,.adresse-grid{grid-template-columns:1fr;gap:2.6rem}
+    .cards,.price-cols{grid-template-columns:1fr}
+    .maison-img img,.salon-img img{height:380px}
+    .foot-grid{grid-template-columns:1fr;gap:2rem}
+    .hero-badges{gap:1.6rem}
+  }
+  @media(max-width:520px){
+    section{padding:4rem 0}
+    .maison-img .stamp{width:104px;height:104px;font-size:.9rem;left:-12px;bottom:-18px}
+    .values{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top">
+      <span class="mark">G</span>
+      <span>
+        <span class="name">La Gerbe d'Or</span><br>
+        <span class="sub">Pâtisserie · Béja, Tunisie</span>
+      </span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#maison">La Maison</a>
+      <a href="#produits">Nos Produits</a>
+      <a href="#prix">Nos Prix</a>
+      <a href="#salon">Salon de Thé</a>
+      <a href="#adresse">Nous Trouver</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-gold" href="#adresse">Nous rendre visite</a>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="wrap hero-inner">
+    <p class="eyebrow">Pâtisserie · Croissanterie · Salon de thé</p>
+    <h1>Le goût de <em>l'authentique</em>, rue de France</h1>
+    <p>Pâtisseries maison, croissants pur beurre et un salon de thé chaleureux, au cœur de Béja. Chez la Gerbe d'Or, la gourmandise se savoure chaque jour — à prix abordables.</p>
+    <div class="hero-actions">
+      <a class="btn btn-gold" href="#produits">Découvrir nos produits</a>
+      <a class="btn btn-ghost" href="#adresse">Rue de France, Béja</a>
+    </div>
+    <div class="hero-badges">
+      <div><strong>Fait maison</strong><span>Chaque matin</span></div>
+      <div><strong>Pur beurre</strong><span>Croissants &amp; viennoiseries</span></div>
+      <div><strong>Prix doux</strong><span>Pour tous les jours</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- MAISON -->
+<section class="maison" id="maison">
+  <div class="wrap maison-grid">
+    <div class="maison-img reveal">
+      <img src="images/maison.jpg" alt="Intérieur de la pâtisserie la Gerbe d'Or, rue de France à Béja">
+      <div class="stamp">Savoir-faire<br>artisanal</div>
+    </div>
+    <div class="maison-text reveal">
+      <p class="eyebrow">La Maison</p>
+      <h2>Une maison de quartier, un savoir-faire de toujours</h2>
+      <p class="lead">Niché rue de France, à Béja, la Gerbe d'Or perpétue la tradition des pâtisseries de quartier : des recettes généreuses, des produits frais et un accueil qui donne envie de revenir.</p>
+      <p>Chaque matin, nos pâtissiers pétrissent, façonnent et cuisent sur place. Nos croissants sont feuilletés au beurre, nos gâteaux garnis à la crème maison, et notre salon de thé vous accueille pour une pause sucrée à toute heure.</p>
+      <div class="values">
+        <div class="value">
+          <h4>Fait maison</h4>
+          <p>Des recettes préparées sur place, chaque jour, sans compromis.</p>
+        </div>
+        <div class="value">
+          <h4>Produits frais</h4>
+          <p>Beurre, farine et crème sélectionnés pour leur qualité.</p>
+        </div>
+        <div class="value">
+          <h4>Prix abordables</h4>
+          <p>Le plaisir d'une vraie pâtisserie, accessible à tous.</p>
+        </div>
+        <div class="value">
+          <h4>Accueil chaleureux</h4>
+          <p>Un service attentionné, en boutique comme au salon.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUITS -->
+<section class="produits" id="produits">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <p class="eyebrow">Nos Produits</p>
+      <h2>Trois univers, une même gourmandise</h2>
+      <p>De la vitrine à la table du salon, tout est pensé pour régaler petits et grands.</p>
+    </div>
+    <div class="cards">
+      <article class="card reveal">
+        <div class="card-img"><img src="images/patisseries.jpg" alt="Entremets et pâtisseries fines en vitrine réfrigérée"></div>
+        <div class="card-body">
+          <span class="tag">Pâtisseries</span>
+          <h3>Pâtisseries fines</h3>
+          <p>Éclairs, tartes aux fruits, mille-feuilles, macarons et entremets : des douceurs préparées maison, à la crème généreuse et au décor soigné.</p>
+          <ul><li>Éclairs</li><li>Tartes</li><li>Mille-feuilles</li><li>Macarons</li></ul>
+        </div>
+      </article>
+      <article class="card reveal">
+        <div class="card-img"><img src="images/croissants.jpg" alt="Croissants dorés pur beurre"></div>
+        <div class="card-body">
+          <span class="tag">Croissanterie</span>
+          <h3>Croissants &amp; viennoiseries</h3>
+          <p>Le feuilletage pur beurre qui croustille et fond à la fois. Croissants, pains au chocolat et brioches sortis du four tout au long de la matinée.</p>
+          <ul><li>Croissants</li><li>Pains au chocolat</li><li>Brioches</li><li>Chaussons</li></ul>
+        </div>
+      </article>
+      <article class="card reveal">
+        <div class="card-img"><img src="images/salon.jpg" alt="Intérieur chaleureux du salon de thé"></div>
+        <div class="card-body">
+          <span class="tag">Salon de thé</span>
+          <h3>Salon de thé</h3>
+          <p>Un espace cosy pour savourer thés, cafés et chocolats maison accompagnés de nos pâtisseries. La pause idéale, seul, en famille ou entre amis.</p>
+          <ul><li>Thés &amp; infusions</li><li>Cafés</li><li>Chocolat chaud</li><li>Formules goûter</li></ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PRIX -->
+<section class="prix" id="prix">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <p class="eyebrow">Nos Prix</p>
+      <h2>Des prix abordables, tous les jours</h2>
+      <p>Parce que la gourmandise ne devrait jamais être un luxe, nos tarifs restent doux — en boutique comme au salon de thé.</p>
+    </div>
+    <div class="price-cols">
+      <div class="price-col reveal">
+        <h3>Pâtisseries</h3>
+        <div class="price-row"><span>Éclair au chocolat / café</span><b>1,800 DT</b></div>
+        <div class="price-row"><span>Mille-feuille</span><b>2,200 DT</b></div>
+        <div class="price-row"><span>Part de tarte aux fruits</span><b>2,500 DT</b></div>
+        <div class="price-row"><span>Macaron</span><b>0,900 DT</b></div>
+        <div class="price-row"><span>Entremets individuel</span><b>3,200 DT</b></div>
+      </div>
+      <div class="price-col reveal">
+        <h3>Croissanterie</h3>
+        <div class="price-row"><span>Croissant pur beurre</span><b>0,700 DT</b></div>
+        <div class="price-row"><span>Pain au chocolat</span><b>0,900 DT</b></div>
+        <div class="price-row"><span>Brioche</span><b>1,000 DT</b></div>
+        <div class="price-row"><span>Chausson aux pommes</span><b>1,100 DT</b></div>
+        <div class="price-row"><span>Formule 3 viennoiseries</span><b>2,400 DT</b></div>
+      </div>
+      <div class="price-col reveal">
+        <h3>Salon de thé</h3>
+        <div class="price-row"><span>Thé / infusion</span><b>1,500 DT</b></div>
+        <div class="price-row"><span>Café / expresso</span><b>1,200 DT</b></div>
+        <div class="price-row"><span>Chocolat chaud maison</span><b>2,200 DT</b></div>
+        <div class="price-row"><span>Formule goûter (boisson + pâtisserie)</span><b>3,800 DT</b></div>
+        <div class="price-row"><span>Formule duo (2 boissons + 2 pâtisseries)</span><b>7,500 DT</b></div>
+      </div>
+    </div>
+    <p class="price-note">Tarifs indicatifs en dinars tunisiens (DT) — <strong>demandez nos formules du jour</strong> pour encore plus de gourmandise à petit prix.</p>
+  </div>
+</section>
+
+<!-- SALON -->
+<section class="salon" id="salon">
+  <div class="wrap salon-grid">
+    <div class="salon-img reveal">
+      <img src="images/salon.jpg" alt="Salle du salon de thé de la Gerbe d'Or, tables et fauteuils colorés">
+    </div>
+    <div class="salon-text reveal">
+      <p class="eyebrow">Salon de Thé</p>
+      <h2>Une pause douce, à deux pas de chez vous</h2>
+      <p>Poussez la porte et installez-vous : le salon de thé de la Gerbe d'Or est un cocon chaleureux où l'on prend le temps de savourer. Thés parfumés, cafés soignés et chocolats maison accompagnent vos pâtisseries préférées.</p>
+      <ul class="salon-list">
+        <li>Un cadre cosy et lumineux, idéal pour discuter ou travailler tranquillement.</li>
+        <li>Des formules goûter pensées pour les familles et les petits budgets.</li>
+        <li>Le service en salle comme à emporter, selon votre envie du moment.</li>
+        <li>Une équipe attentionnée qui vous conseille selon vos goûts.</li>
+      </ul>
+      <div class="hero-actions" style="margin-top:2rem">
+        <a class="btn btn-gold" href="#adresse">Réserver votre table</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADRESSE -->
+<section class="adresse" id="adresse">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <p class="eyebrow">Nous Trouver</p>
+      <h2>Rue de France, Béja</h2>
+      <p>Venez nous rendre visite : la Gerbe d'Or vous accueille rue de France, à Béja, en Tunisie — plus code <strong>P5FP+C7</strong>.</p>
+    </div>
+    <div class="adresse-grid">
+      <div class="info-card reveal">
+        <h3>Pâtisserie la Gerbe d'Or</h3>
+        <div class="info-line">
+          <span class="ic">📍</span>
+          <span><span class="lbl">Adresse</span><br><span class="val">Rue de France<br>Béja, Tunisie</span></span>
+        </div>
+        <div class="info-line">
+          <span class="ic">🧭</span>
+          <span><span class="lbl">Plus code</span><br><span class="val">P5FP+C7 Béja, Tunisie</span></span>
+        </div>
+        <div class="info-line">
+          <span class="ic">🗺️</span>
+          <span><span class="lbl">Itinéraire</span><br><span class="val"><a href="https://www.google.com/maps/place/P%C3%A2tisserie+la+gerbe+d%27or/@36.7235547,9.1856385,17z" target="_blank" rel="noopener">Ouvrir dans Google Maps ↗</a></span></span>
+        </div>
+        <div class="info-line">
+          <span class="ic">🕑</span>
+          <span><span class="lbl">Horaires</span><br><span class="val">Non renseignés sur notre fiche Google<br><em style="font-size:.88rem;color:var(--brown-soft)">Passez nous voir ou contactez-nous en boutique</em></span></span>
+        </div>
+        <div class="info-line">
+          <span class="ic">🥐</span>
+          <span><span class="lbl">Nos services</span><br><span class="val">Pâtisserie · Croissanterie · Salon de thé<br>Vente à emporter &amp; consommation sur place</span></span>
+        </div>
+        <div class="info-line">
+          <span class="ic">💛</span>
+          <span><span class="lbl">À retenir</span><br><span class="val">Fait maison chaque jour · Prix abordables</span></span>
+        </div>
+      </div>
+      <div class="map-frame reveal">
+        <a href="https://www.openstreetmap.org/?mlat=36.7235547&mlon=9.1856385#map=17/36.7235547/9.1856385" target="_blank" rel="noopener" title="Ouvrir la carte — Pâtisserie la Gerbe d'Or, rue de France, Béja">
+          <img src="images/map.png" alt="Carte de Béja — Pâtisserie la Gerbe d'Or, rue de France (plus code P5FP+C7)">
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="name">Pâtisserie la Gerbe d'Or</div>
+        <p>Pâtisserie, croissanterie et salon de thé rue de France, à Béja (Tunisie). Le goût de l'authentique, chaque jour, à prix abordables.</p>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#maison">La Maison</a></li>
+          <li><a href="#produits">Nos Produits</a></li>
+          <li><a href="#prix">Nos Prix</a></li>
+          <li><a href="#salon">Salon de Thé</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Nous trouver</h4>
+        <ul>
+          <li>Rue de France, Béja</li>
+          <li>Tunisie</li>
+          <li>Plus code : P5FP+C7</li>
+          <li>Horaires à confirmer</li>
+          <li><a href="#adresse">Voir la carte</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> Pâtisserie la Gerbe d'Or — Rue de France, Béja, Tunisie</span>
+      <span>Fait maison avec passion 🥐</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Mobile menu
+  var burger = document.getElementById('burger');
+  var navLinks = document.getElementById('navLinks');
+  burger.addEventListener('click', function(){
+    navLinks.classList.toggle('open');
+  });
+  navLinks.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ navLinks.classList.remove('open'); });
+  });
+
+  // Scroll reveal
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+</script>
+</body>
+</html>
